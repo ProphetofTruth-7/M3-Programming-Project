@@ -70,7 +70,7 @@ public:
         }
     }
 
-    bool isLeapYear() {                                                              // isLeapYear      FOCUS HERE
+    bool isLeapYear() {
         if (year % 4 == 0) {
             return true;
         }
@@ -79,8 +79,8 @@ public:
         }
     }
 
-    bool isLeapYear(int y) {
-        if (y % 4 == 0) {
+    bool isLeapYear(int L) {
+        if (L % 4 == 0) {
             return true;
         }
         else {
@@ -95,10 +95,11 @@ public:
         else if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (d > 0 && d < 32)) {
             day = d;
         }
-        else if (month == 2 && year % 4 == 0 && (d > 0 && d < 29)) {
+        else if (month == 2 && isLeapYear(2024) == true && (d > 0 && d < 29)) {
             day = d;
+            cout << "HERE" << endl;
         }
-        else if (month == 2 && year % 4 != 0 && (d > 0 && d < 28)) {
+        else if (month == 2 && isLeapYear(2024) == false && (d > 0 && d < 28)) {
             day = d;
         }
         else {
@@ -135,12 +136,10 @@ public:
 int main()
 {
     Date choice(1, 1, 1900, "Janurary");
-    choice.setMonth(3);
+    choice.setYear(2024);
+    choice.setMonth(2);
     choice.setDay(29);
-    choice.setYear(2034);
 
     choice.numericalPrint();
-    choice.monthNormPrint();
-    choice.monthAltPrint();
 
 }

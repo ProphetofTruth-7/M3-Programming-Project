@@ -95,10 +95,10 @@ public:
         else if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (d > 0 && d < 32)) {
             day = d;
         }
-        else if (month == 2 && isLeapYear(2024) == true && (d > 0 && d < 29)) {
+        else if (month == 2 && isLeapYear() == true && (d > 0 && d < 30)) {
             day = d;
         }
-        else if (month == 2 && isLeapYear(2024) == false && (d > 0 && d < 28)) {
+        else if (month == 2 && isLeapYear() == false && (d > 0 && d < 29)) {
             day = d;
         }
         else {
@@ -138,6 +138,14 @@ int main()
     choice.setYear(2024);
     choice.setMonth(2);
     choice.setDay(29);
+
+    cout << choice.getMonth() << endl;
+    cout << choice.getDay() << endl;
+
+    if (choice.isLeapYear() == true) {
+        cout << "noodle4" << endl;
+    }
+
 
     choice.numericalPrint();
 

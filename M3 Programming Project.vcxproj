@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Date.cpp" />
     <ClCompile Include="M3 Programming Project.cpp" />
   </ItemGroup>
   <ItemGroup>

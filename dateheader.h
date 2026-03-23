@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+// This is the Header File, containing Prototypes for all Member Function and the Class itself //
 
 /*
  * getDay

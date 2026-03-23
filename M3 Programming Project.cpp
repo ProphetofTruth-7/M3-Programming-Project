@@ -14,14 +14,18 @@ public:
     Date(int m, int d, int y, string n) : month(m), day(d), year(y), monthName(n) {}
 
     void setMonth(int m) {
-        if (m > 0 && m < 12) {
+        if (m > 0 && m < 13) {
             month = m;
+            setMonthName();
         }
         else {
             m = 1;
             month = m;
+            setMonthName();
         }
+    }
 
+    void setMonthName() {
         if (month == 1) {
             monthName = "Janurary";
         }
@@ -193,9 +197,6 @@ public:
 int main()
 {
     Date choice(1, 1, 1900, "Janurary");
-    choice.setYear(1900);
-    choice.setMonth(1);
-    choice.setDay(1);
 
     int userReply = 0;
 
@@ -208,6 +209,8 @@ int main()
     cout << "What is the Day(current or chosen): ";
     cin >> userReply;
     choice.setDay(userReply);
+
+    cout << endl;
 
     choice.numericalPrint();
     choice.monthNormPrint();

@@ -5,23 +5,20 @@ using namespace std;
 
 
 /*
- * lastDay()
+ * getDay
  * ------------------------------------------------------------
- * Returns the upper limit in days of a given month value
+ * Returns the current state of the Day variable
  *
  * Inputs:
- *   month          - The private integer variable
+ *   None
  * Outputs:
- *   Upper Limit    - A valid integer that corresponds to the last day of the given month
- *   isLeapYear     - A function called only if the month == 2 in which the state of the year(if its a leap year) is checked and the Upper Limit is altered as needed
+ *   day            - A valid integer that corresponds to a current day of the current month value. Will wither be a valid, change value or the default
  *
  * Preconditions:
- *   - setYear has been run or the default is the expected variable
- *   - isLeapYear exists if the month == 2
+ *   - The day integer exists and has a coutable value
  *
  * Postconditions:
- *   - An integer value of 31, 30, 29, or 28 is returned to the setDay function according to neccessity
- *   - isLeapYear is run immediately afterwards if the month == 2
+ *   - day is returned directly to the calling point
  */
 class Date {
 private:
@@ -153,16 +150,112 @@ public:
  */
     int lastDay(int testyVar);
 
+/*
+ * isLeapYear()
+ * ------------------------------------------------------------
+ * Returns a true or false boolean depending on if the given year is a leap year(true) or not(false)
+ *
+ * Inputs:
+ *   year          - The private integer variable
+ * Outputs:
+ *   Boolean        - A boolean dependent on the state of the given year
+ *
+ * Preconditions:
+ *   - lastDay has been called
+ *
+ * Postconditions:
+ *   - A value of true or false has been returned to lastDay, permitting it to finish its calculations
+ */
     bool isLeapYear();
 
+/*
+ * isLeapYear(arbitrary)
+ * ------------------------------------------------------------
+ * Returns a true or false boolean depending on if the given value is a leap year(true) or not(false)
+ *
+ * Inputs:
+ *   testyVar       - An arbitrary, easily accessible integer value that corresponds to a certain year
+ * Outputs:
+ *   Boolean        - A boolean dependent on the state of the given value
+ * 
+ * Preconditions:
+ *   - testyVar is a valid integer above 0
+ *
+ * Postconditions:
+ *   - A value of true or false has been returned for use as neccessary
+ */
     bool isLeapYear(int testyVar);
 
+/*
+ * getDay
+ * ------------------------------------------------------------
+ * Returns the current state of the day variable
+ *
+ * Inputs:
+ *   None
+ * Outputs:
+ *   day            - A valid integer that corresponds to a current day of the current month value. Will either be a valid, changed value or the default
+ *
+ * Preconditions:
+ *   - The day integer exists and has a coutable value
+ *
+ * Postconditions:
+ *   - day is returned directly to the calling point
+ */
     int getDay() const;
 
+/*
+ * getMonth
+ * ------------------------------------------------------------
+ * Returns the current state of the month variable
+ *
+ * Inputs:
+ *   None
+ * Outputs:
+ *   month          - A valid integer that corresponds to a current month of the current year value. Will either be a valid, changed value or the default
+ *
+ * Preconditions:
+ *   - The month integer exists and has a coutable value
+ *
+ * Postconditions:
+ *   - month is returned directly to the calling point
+ */
     int getMonth() const;
 
+/*
+ * getYear
+ * ------------------------------------------------------------
+ * Returns the current state of the year variable
+ *
+ * Inputs:
+ *   None
+ * Outputs:
+ *   year          - A valid integer that corresponds to the current year. Will either be a valid, changed value or the default
+ *
+ * Preconditions:
+ *   - The year integer exists and has a coutable value
+ *
+ * Postconditions:
+ *   - year is returned directly to the calling point
+ */
     int getYear() const;
 
+/*
+ * getMonthName
+ * ------------------------------------------------------------
+ * Returns the current state of the monthName variable
+ *
+ * Inputs:
+ *   None
+ * Outputs:
+ *   monthName          - A valid string that corresponds to a current month value
+ *
+ * Preconditions:
+ *   - The monthName string exists and has a coutable value
+ *
+ * Postconditions:
+ *   - monthName is returned directly to the calling point
+ */
     string getMonthName() const;
 
     void numericalPrint();

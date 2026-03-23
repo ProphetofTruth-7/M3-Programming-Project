@@ -196,24 +196,25 @@ public:
 
 int main()
 {
-    Date choice(1, 1, 1900, "Janurary");
+    Date calendar(1, 1, 1900, "Janurary");
 
     int userReply = 0;
 
     cout << "What is the Year(current or chosen): ";
     cin >> userReply;
-    choice.setYear(userReply);
+    calendar.setYear(userReply);
     cout << "What is the Month(current or chosen): ";
     cin >> userReply;
-    choice.setMonth(userReply);
+    calendar.setMonth(userReply);
     cout << "What is the Day(current or chosen): ";
     cin >> userReply;
-    choice.setDay(userReply);
+    calendar.setDay(userReply);
 
     cout << endl;
 
-    choice.numericalPrint();
-    choice.monthNormPrint();
-    choice.monthAltPrint();
+    calendar.numericalPrint();
+    calendar.monthNormPrint();
+    calendar.monthAltPrint();
 
+    return 0;
 }

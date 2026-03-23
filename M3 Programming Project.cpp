@@ -1,18 +1,13 @@
 /*
- * Date Class Subproject(UNFINISHED DOCUMENTATION< BOZO)
+ * Date Class Subproject
  * ------------------------------------------------------------
- * This program reads the information of a number of students from an input file. It stores the data within an array of structs that contains:
- *  - The Student's Name
- *  - The Student's ID
- *  - The Student's Grades(within a dynamically allocated Array)  
+ * This program recieves the User's input in regards to a chosen year, month, and day. It validates the given value and, if invalid, returns a default value for use.
+ * 
+ * Upon validation, it prints three different methodologies for date reading.
  *  
- * The program computes each student's average score and letter grade, and stores them within the above struct. It then prints a formatted table including all that data
+ * The program relies upon attached Header and .cpp files, and is a OOP work.
  *
- * Input file format:
- *   #ofStudents #ofGradesPerStudent
- *   studentName studentID grade1 grade2 grade3 grade... gradeX
- *
- * Example file: StudentData.txt
+
  */
 
 #include "dateheader.h"

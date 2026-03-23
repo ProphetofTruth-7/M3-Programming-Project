@@ -1,19 +1,11 @@
 #include "dateheader.h"
 #include <iostream>
-
 #include <string>
 using namespace std;
 
-class Date {
-private:
-    int month;
-    int day;
-    int year;
-    string monthName;
-public:
-    Date(int m, int d, int y, string n) : month(m), day(d), year(y), monthName(n) {}
+    Date:: Date(int m, int d, int y, string n) : month(m), day(d), year(y), monthName(n) {}
 
-    void setMonth(int m) {
+    void Date:: setMonth(int m) {
         if (m > 0 && m < 13) {
             month = m;
             setMonthName();
@@ -25,7 +17,7 @@ public:
         }
     }
 
-    void setMonthName() {
+    void Date:: setMonthName() {
         if (month == 1) {
             monthName = "Janurary";
         }
@@ -64,7 +56,7 @@ public:
         }
     }
 
-    void setYear(int y) {
+    void Date:: setYear(int y) {
         if (y > -1) {
             year = y;
         }
@@ -74,7 +66,7 @@ public:
         }
     }
 
-    void setDay(int d) {
+    void Date:: setDay(int d) {
         if (d > 0 && d < lastDay()) {
             day = d;
         }
@@ -93,7 +85,7 @@ public:
         }
     }
 
-    bool isLeapYear() {
+    bool Date:: isLeapYear() {
         if (year % 100 == 0) {
             if (year % 400 == 0) {
                 return true;
@@ -110,7 +102,7 @@ public:
         }
     }
 
-    bool isLeapYear(int testyVar) {
+    bool Date:: isLeapYear(int testyVar) {
         if (testyVar % 100 == 0) {
             if (testyVar % 400 == 0) {
                 return true;
@@ -127,7 +119,7 @@ public:
         }
     }
 
-    int lastDay() {
+    int Date:: lastDay() {
         if ((month == 4 || month == 6 || month == 9 || month == 11)) {
             return 31;
         }
@@ -146,7 +138,7 @@ public:
 
     }
 
-    int lastDay(int testyVar) {
+    int Date:: lastDay(int testyVar) {
         if ((testyVar == 4 || testyVar == 6 || testyVar == 9 || testyVar == 11)) {
             return 31;
         }
@@ -166,31 +158,29 @@ public:
 
 
 
-    int getDay() const {
+    int Date:: getDay() const {
         return day;
     };
 
-    int getMonth() const {
+    int Date:: getMonth() const {
         return month;
     };
 
-    int getYear() const {
+    int Date:: getYear() const {
         return year;
     };
 
-    string getMonthName() const {
+    string Date:: getMonthName() const {
         return monthName;
     }
 
-    void numericalPrint() {
+    void Date:: numericalPrint() {
         cout << month << "/" << day << "/" << year << endl;
     }
 
-    void monthNormPrint() {
+    void Date:: monthNormPrint() {
         cout << monthName << " " << day << ", " << year << endl;
     }
-    void monthAltPrint() {
+    void Date:: monthAltPrint() {
         cout << day << " " << monthName << " " << year << endl;
     }
-
-};

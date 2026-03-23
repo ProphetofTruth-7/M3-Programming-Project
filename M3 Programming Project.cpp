@@ -79,8 +79,8 @@ public:
         }
     }
 
-    bool isLeapYear(int L) {
-        if (L % 4 == 0) {
+    bool isLeapYear(int testyVar) {
+        if (testyVar % 4 == 0) {
             return true;
         }
         else {
@@ -97,7 +97,6 @@ public:
         }
         else if (month == 2 && isLeapYear(2024) == true && (d > 0 && d < 29)) {
             day = d;
-            cout << "HERE" << endl;
         }
         else if (month == 2 && isLeapYear(2024) == false && (d > 0 && d < 28)) {
             day = d;

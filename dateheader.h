@@ -258,10 +258,64 @@ public:
  */
     string getMonthName() const;
 
+/*
+ * numericalPrint
+ * ------------------------------------------------------------
+ * Prints out the day, month, year in fully numerical format
+ *
+ * Inputs:
+ *   day                - The private integer variable that denotes the days of a calendar month
+ *   month              - The private integer variable that denotes the months of a calendar year
+ *   year               - The private integer variable that denotes the Gregorian Year
+ * Outputs:
+ *   Collated Report    - A formatted report that lists the current values of the day, month, and year variables
+ *
+ * Preconditions:
+ *   - The day, month, and year values have extant values, either unique or default
+ *
+ * Postconditions:
+ *   - A report is printed(month/day/year)
+ */
     void numericalPrint();
 
+/*
+ * monthNormPrint
+ * ------------------------------------------------------------
+ * Prints out the day, monthName, year in fully mixed format with monthName first
+ *
+ * Inputs:
+ *   day                - The private integer variable that denotes the days of a calendar month
+ *   monthName          - The private string variable that denotes the months of a calendar year in a alphabetical sense
+ *   year               - The private integer variable that denotes the Gregorian Year
+ * Outputs:
+ *   Collated Report    - A formatted report that lists the current values of the day, monthName, and year variables
+ *
+ * Preconditions:
+ *   - The day, monthName, and year values have extant values, either unique or default
+ *
+ * Postconditions:
+ *   - A report is printed(monthName day, year)
+ */
     void monthNormPrint();
 
+/*
+ * monthAltPrint
+ * ------------------------------------------------------------
+ * Prints out the day, monthName, year in fully mixed format with day first
+ *
+ * Inputs:
+ *   day                - The private integer variable that denotes the days of a calendar month
+ *   monthName          - The private string variable that denotes the months of a calendar year in a alphabetical sense
+ *   year               - The private integer variable that denotes the Gregorian Year
+ * Outputs:
+ *   Collated Report    - A formatted report that lists the current values of the day, monthName, and year variables
+ *
+ * Preconditions:
+ *   - The day, monthName, and year values have extant values, either unique or default
+ *
+ * Postconditions:
+ *   - A report is printed(day monthName year)
+ */
     void monthAltPrint();
 };
 #endif

@@ -70,6 +70,24 @@ public:
         }
     }
 
+    bool isLeapYear() {                                                              // isLeapYear      FOCUS HERE
+        if (year % 4 == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    bool isLeapYear(int y) {
+        if (y % 4 == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     void setDay(int d) {
         if ((month == 4 || month == 6 || month == 9 || month == 11) && (d > 0 && d < 31)) {
             day = d;

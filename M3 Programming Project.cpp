@@ -70,6 +70,25 @@ public:
         }
     }
 
+    void setDay(int d) {
+        if (d > 0 && d < lastDay()) {
+            day = d;
+        }
+        else if (d > 0 && d < lastDay()) {
+            day = d;
+        }
+        else if (d > 0 && d < lastDay()) {
+            day = d;
+        }
+        else if (d > 0 && d < lastDay()) {
+            day = d;
+        }
+        else {
+            d = 1;
+            day = d;
+        }
+    }
+
     bool isLeapYear() {
         if (year % 4 == 0) {
             return true;
@@ -88,24 +107,43 @@ public:
         }
     }
 
-    void setDay(int d) {
-        if ((month == 4 || month == 6 || month == 9 || month == 11) && (d > 0 && d < 31)) {
-            day = d;
+    int lastDay() {
+        if ((month == 4 || month == 6 || month == 9 || month == 11)) {
+            return 31;
         }
-        else if ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && (d > 0 && d < 32)) {
-            day = d;
+        else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+        {
+            return 32;
         }
-        else if (month == 2 && isLeapYear() == true && (d > 0 && d < 30)) {
-            day = d;
+        else if (month == 2 && isLeapYear() == true)
+        {
+            return 30;
+        } else 
+        {
+            return 29;
         }
-        else if (month == 2 && isLeapYear() == false && (d > 0 && d < 29)) {
-            day = d;
+        
+    }
+
+    int lastDay(int testyVar) {
+        if ((testyVar == 4 || testyVar == 6 || testyVar == 9 || testyVar == 11)) {
+            return 31;
         }
-        else {
-            d = 1;
-            day = d;
+        else if (testyVar == 1 || testyVar == 3 || testyVar == 5 || testyVar == 7 || testyVar == 8 || testyVar == 10 || testyVar == 12)
+        {
+            return 32;
+        }
+        else if (testyVar == 2 && isLeapYear() == true)
+        {
+            return 30;
+        }
+        else
+        {
+            return 29;
         }
     }
+
+
 
     int getDay() const {
         return day;
@@ -135,17 +173,11 @@ public:
 int main()
 {
     Date choice(1, 1, 1900, "Janurary");
-    choice.setYear(2024);
+    choice.setYear(2023);
     choice.setMonth(2);
-    choice.setDay(29);
+    choice.setDay(28);
 
-    cout << choice.getMonth() << endl;
-    cout << choice.getDay() << endl;
-
-    if (choice.isLeapYear() == true) {
-        cout << "noodle4" << endl;
-    }
-
+    cout << choice.lastDay(4) - 1 << endl;
 
     choice.numericalPrint();
 

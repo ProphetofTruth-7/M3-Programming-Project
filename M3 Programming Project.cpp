@@ -1,4 +1,19 @@
-// This is the Date Class Subproject
+/*
+ * Date Class Subproject(UNFINISHED DOCUMENTATION< BOZO)
+ * ------------------------------------------------------------
+ * This program reads the information of a number of students from an input file. It stores the data within an array of structs that contains:
+ *  - The Student's Name
+ *  - The Student's ID
+ *  - The Student's Grades(within a dynamically allocated Array)  
+ *  
+ * The program computes each student's average score and letter grade, and stores them within the above struct. It then prints a formatted table including all that data
+ *
+ * Input file format:
+ *   #ofStudents #ofGradesPerStudent
+ *   studentName studentID grade1 grade2 grade3 grade... gradeX
+ *
+ * Example file: StudentData.txt
+ */
 
 #include <iostream>
 #include <string>

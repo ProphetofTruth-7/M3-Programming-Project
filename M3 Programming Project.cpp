@@ -90,7 +90,15 @@ public:
     }
 
     bool isLeapYear() {
-        if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else if (year % 4 == 0) {
             return true;
         }
         else {
@@ -99,7 +107,15 @@ public:
     }
 
     bool isLeapYear(int testyVar) {
-        if (testyVar % 4 == 0) {
+        if (testyVar % 100 == 0) {
+            if (testyVar % 400 == 0) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else if (testyVar % 4 == 0) {
             return true;
         }
         else {
@@ -157,6 +173,10 @@ public:
         return year;
     };
 
+    string getMonthName() const {
+        return monthName;
+    }
+
     void numericalPrint() {
         cout << month << "/" << day << "/" << year << endl;
     }
@@ -173,12 +193,24 @@ public:
 int main()
 {
     Date choice(1, 1, 1900, "Janurary");
-    choice.setYear(2023);
-    choice.setMonth(2);
-    choice.setDay(28);
+    choice.setYear(1900);
+    choice.setMonth(1);
+    choice.setDay(1);
 
-    cout << choice.lastDay(4) - 1 << endl;
+    int userReply = 0;
+
+    cout << "What is the Year(current or chosen): ";
+    cin >> userReply;
+    choice.setYear(userReply);
+    cout << "What is the Month(current or chosen): ";
+    cin >> userReply;
+    choice.setMonth(userReply);
+    cout << "What is the Day(current or chosen): ";
+    cin >> userReply;
+    choice.setDay(userReply);
 
     choice.numericalPrint();
+    choice.monthNormPrint();
+    choice.monthAltPrint();
 
 }

@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2317426f-385d-4147-b682-cbeac1449482}</ProjectGuid>
+    <ProjectGuid>{32C19A0A-1503-4A6F-04AE-BCBC67BA465E}</ProjectGuid>
     <RootNamespace>M3ProgrammingProject</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

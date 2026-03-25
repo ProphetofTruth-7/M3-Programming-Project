@@ -17,7 +17,7 @@ using namespace std;
 int main()
 {
     Date calendar(1, 1, 1900, "Janurary");
-
+    
     int userReply = 0;
 
     cout << "What is the Year(current or chosen): ";

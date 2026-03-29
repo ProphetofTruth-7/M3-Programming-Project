@@ -12,7 +12,7 @@ public:
     NumberArray(int s, double* d) : size(s), data(d) {}
 
     int* DataArray = new int[MAX_SIZE];
-    NumberArray.data = DataArray;
+    data = DataArray;
 
     int basicFunction() {
         return size + 5;

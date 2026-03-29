@@ -12,6 +12,7 @@ public:
     NumberArray(int s, double* d) : size(s), data(d) {}
 
     int* DataArray = new int[MAX_SIZE];
+    NumberArray.data = DataArray;
 
     int basicFunction() {
         return size + 5;
@@ -26,7 +27,7 @@ public:
     }
 
     int accessIndex(int l) {
-        cout << DataArray[l];
+        return DataArray[l];
     }
 };
 
@@ -37,6 +38,6 @@ int main()
     cout << bigboi.basicFunction(10) << endl;
     cout << bigboi.basicFunction() << endl;
 
-    bigboi.assignIndex(0, 7) << endl;
-    bigboi.accessIndex(0) << endl;
+    bigboi.assignIndex(0, 7);
+    cout << bigboi.accessIndex(0) << endl;
 }

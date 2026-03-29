@@ -1,12 +1,42 @@
 // This is the NumberArray2 Subproject
 
 #include <iostream>
-#include "numberarray2.h"
 using namespace std;
+
+class NumberArray {
+private:
+    int size;
+    double* data;
+    int const MAX_SIZE = 20;
+public:
+    NumberArray(int s, double* d) : size(s), data(d) {}
+
+    int* DataArray = new int[MAX_SIZE];
+
+    int basicFunction() {
+        return size + 5;
+	}
+
+    int basicFunction(int x) {
+        return x + 5;
+	}
+
+    void assignIndex(int l, int x) {
+        DataArray[l] = x;
+    }
+
+    int accessIndex(int l) {
+        cout << DataArray[l];
+    }
+};
 
 int main()
 {
-    NumberArray bigboi(5);
+    NumberArray bigboi(5, 0);
     
-    basicFunc();
+    cout << bigboi.basicFunction(10) << endl;
+    cout << bigboi.basicFunction() << endl;
+
+    bigboi.assignIndex(0, 7) << endl;
+    bigboi.accessIndex(0) << endl;
 }

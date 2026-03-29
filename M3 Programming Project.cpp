@@ -1,9 +1,9 @@
-// This is the Main Project Branch. Look at the Subbranches for Grading
+// This is the NumberArray2 Subproject
 
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!\n";
+    cout << "NUMBEr ARRAY2\n";
 }

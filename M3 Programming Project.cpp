@@ -7,37 +7,57 @@ class NumberArray {
 private:
     int size;
     double* data;
-    int const MAX_SIZE = 20;
 public:
-    NumberArray(int s, double* d) : size(s), data(d) {}
+    NumberArray(int s) : size(s), data(nullptr){ //Find a way to make size = MAX_SIZE. And make MAX_SIZE the default
+        data = new double[s];
 
-    int* DataArray = new int[MAX_SIZE];
-    data = DataArray;
-
-    int basicFunction() {
-        return size + 5;
-	}
-
-    int basicFunction(int x) {
-        return x + 5;
-	}
-
-    void assignIndex(int l, int x) {
-        DataArray[l] = x;
+        for (int i = 0; i < s; i++) {
+            data[i] = 0.0;
+		}
     }
 
-    int accessIndex(int l) {
-        return DataArray[l];
+    ~NumberArray() {
+		delete[] data;
+		cout << "Memory has been cleared." << endl;
     }
+
+    void setNumber(int index, double value) {
+		if (index >= 0 && index < size) {
+            data[index] = value;
+        }
+    }
+
+    double getNumber(int index) const {
+        if (index >= 0 && index < size) {
+            return data[index];
+        }
+        else {
+            return 0;
+            cout << "Invalid Index(out of bounds)" << endl;
+        }
+    }
+
+    double getMin() const {
+        double minimum = data[0];
+
+        for (int i = 1; i < size; i++) {
+            if (data[i] < minimum) {
+                minimum = data[i];
+            }
+        }
+		return minimum;
+    }
+
 };
 
 int main()
 {
-    NumberArray bigboi(5, 0);
+	static int const MAX_SIZE = 20;
+    NumberArray userarray(MAX_SIZE);
     
-    cout << bigboi.basicFunction(10) << endl;
-    cout << bigboi.basicFunction() << endl;
 
-    bigboi.assignIndex(0, 7);
-    cout << bigboi.accessIndex(0) << endl;
+    userarray.setNumber(0, 7);
+    cout << userarray.getNumber(0) << endl;
+
+	cout << userarray.getNumber(19) << endl;
 }

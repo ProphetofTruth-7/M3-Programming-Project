@@ -144,7 +144,7 @@ public:
 /*
  * print
  * ------------------------------------------------------------
- * Prints every index within the dynamic array
+ * Prints every index within the dynamic array and runs the getMin, getMax, and getAverage Functions
  *
  * Inputs:
  *   None

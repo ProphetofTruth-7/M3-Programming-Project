@@ -22,7 +22,7 @@ int main()
         userarray.setNumber(d, userChoice);
     }
 
-    cout << "This is a specific index from the array: " << userarray.getNumber(userarray.getSize() - 1) << endl;
+    cout << "This is a specific index from the array: " << userarray.getNumber(userarray.getSize() - 2) << endl;
 
     userarray.print();
 

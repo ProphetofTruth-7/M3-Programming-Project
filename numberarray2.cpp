@@ -31,7 +31,7 @@ int NumberArray::getSize() const {
     return size;
 }
 
-inline double NumberArray::getNumber(int index) const {
+double NumberArray::getNumber(int index) const {
     if (index >= 0 && index < size) {
         return data[index];
     }

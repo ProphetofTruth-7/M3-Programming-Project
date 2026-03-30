@@ -3,32 +3,26 @@
 #include <iostream>
 using namespace std;
 
+int const MAX_SIZE = 30;
+
 class NumberArray {
 private:
     int size;
     double* data;
-    static const int MAX_SIZE = 30;
 public:
     NumberArray(int s) : size(s), data(nullptr){ //Find a way to make size = MAX_SIZE. And make MAX_SIZE the default
         data = new double[s];
+        s = MAX_SIZE;
+
+        for (int i = 0; i < s; i++) {
+            data[i] = 0.0;
+		}
     }
 
     ~NumberArray() {
 		delete[] data;
 		cout << "Memory has been cleared" << endl;
     }
-
-    void fillArray () { 
-        cout << "Filling the Dynamic Array! Please enter your chosen number, then press enter" << endl;
-        cout << "When satisfied, enter the Sentinel Value of - 0.08" << endl;
-        double userChoice = 0;
-
-        for (int d = 0; d < MAX_SIZE; d++) {
-            cin >> userChoice;
-            setNumber(d, userChoice);
-            size = d;
-        }
-	}
 
     void setNumber(int index, double value) {
 		if (index >= 0 && index < size) {
@@ -88,16 +82,16 @@ public:
 
 int main()
 {
-	static int const MAX_SIZE = 20;
-    NumberArray userarray(MAX_SIZE);
-
-    double userChoice = 0;
-    int loopIncrement = 0;
+    NumberArray userarray(5);
     
     cout << "Filling the Dynamic Array! Please enter your chosen number, then press enter" << endl;
     cout << "When satisfied, enter the Sentinel Value of - 0.08" << endl;
+    double userChoice = 0;
 
-    userarray.fillArray();
+    for (int d = 0; d < MAX_SIZE; d++) {
+        cin >> userChoice;
+        userarray.setNumber(d, userChoice);
+    }
    
     cout << "The Minimum Value is: " << userarray.getMin() << endl;
     cout << "The Maximum Value is: " << userarray.getMax() << endl;

@@ -27,7 +27,7 @@ void NumberArray::setSize(int x) {
     }
 }
 
-int NumberArray:getSize() const {
+int NumberArray::getSize() const {
     return size;
 }
 
@@ -36,7 +36,7 @@ inline double NumberArray::getNumber(int index) const {
         return data[index];
     }
     else {
-        return 0;
+        return 0.0;
         cout << "Invalid Index(out of bounds)" << endl;
     }
 }
@@ -45,18 +45,18 @@ double NumberArray::getMin() const {
     double minimum = data[0];
 
     for (int i = 1; i < size; i++) {
-        if (data[i] < minimum && data[i] != -0.08) {
+        if (data[i] < minimum) {
             minimum = data[i];
         }
     }
     return minimum;
 }
 
-double NumberArray:getMax() const {
+double NumberArray::getMax() const {
     double maximum = data[0];
 
     for (int i = 1; i < size; i++) {
-        if (data[i] > maximum && data[i] != -0.08) {
+        if (data[i] > maximum) {
             maximum = data[i];
         }
     }
@@ -73,6 +73,13 @@ double NumberArray::getAverage() const {
 }
 
 void NumberArray::print() const {
+    
+    cout << endl;
+    cout << "The Minimum Value is: " << getMin() << endl;
+    cout << "The Maximum Value is: " << getMax() << endl;
+    cout << "The Average Value is: " << getAverage() << endl;
+    cout << endl;
+    
     for (int i = 0; i < size; i++) {
         cout << data[i] << " ";
     }

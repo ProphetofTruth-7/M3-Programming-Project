@@ -12,10 +12,10 @@ private:
     double* data;
 public:
     // Constructor //
-    NumberArray(int s) : size(s), data(nullptr) {}
+    NumberArray(int s);
 
 	// Deconstructor //
-    ~NumberArray() {}
+    ~NumberArray();
 
       // Function Prototypes/Documentation //
  /*
@@ -149,13 +149,14 @@ public:
  * Inputs:
  *   None
  * Outputs:
- *   Collated Report     - A full list of all values stored within the dynamic array
+ *   Collated Report     - A full list of all values stored within the dynamic array, and the minimum, maximum, and average as well
  *
  * Preconditions:
  *   - The dynamic array exists and contains at least 1 valid value
+ *   - getMin(), getMax(), and getAverage() are all extant and functional
  *
  * Postconditions:
- *   - Every valid value within the dynamic array is printed
+ *   - Every valid value, minimum, maximum, and average within the dynamic array is printed
  */
     void print() const;
 

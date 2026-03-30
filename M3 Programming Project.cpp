@@ -23,7 +23,7 @@ public:
         cout << "When satisfied, enter the Sentinel Value of - 0.08" << endl;
         double userChoice = 0;
 
-        for (int d = 0; d < MAX_SIZE || userChoice == -0.08; d++) {
+        for (int d = 0; d < MAX_SIZE; d++) {
             cin >> userChoice;
             setNumber(d, userChoice);
             size = d;

@@ -23,7 +23,7 @@ public:
         cout << "When satisfied, enter the Sentinel Value of - 0.08" << endl;
         double userChoice = 0;
 
-        for (int d = 0; d < MAX_SIZE || userChoice != -0.08; d++) {
+        for (int d = 0; d < MAX_SIZE || userChoice == -0.08; d++) {
             cin >> userChoice;
             setNumber(d, userChoice);
             size = d;
@@ -97,13 +97,7 @@ int main()
     cout << "Filling the Dynamic Array! Please enter your chosen number, then press enter" << endl;
     cout << "When satisfied, enter the Sentinel Value of - 0.08" << endl;
 
-    while (userChoice != -0.08) {
-        cin >> userChoice;
-        userarray.setNumber(loopIncrement, userChoice);
-        ++loopIncrement;
-    }
-
-    userarray.setNumber(loopIncrement - 1, 0);
+    userarray.fillArray();
    
     cout << "The Minimum Value is: " << userarray.getMin() << endl;
     cout << "The Maximum Value is: " << userarray.getMax() << endl;

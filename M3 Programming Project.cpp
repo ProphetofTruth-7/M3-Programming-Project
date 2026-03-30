@@ -11,7 +11,7 @@ private:
     int size;
     double* data;
 public:
-    NumberArray(int s) : size(s), data(nullptr){ //Find a way to make size = MAX_SIZE. And make MAX_SIZE the default
+    NumberArray(int s) : size(s), data(nullptr){
         data = new double[s];
 
         for (int i = 0; i < s; i++) {

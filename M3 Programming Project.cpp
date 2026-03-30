@@ -12,7 +12,6 @@ private:
 public:
     NumberArray(int s) : size(s), data(nullptr){ //Find a way to make size = MAX_SIZE. And make MAX_SIZE the default
         data = new double[s];
-        s = MAX_SIZE;
 
         for (int i = 0; i < s; i++) {
             data[i] = 0.0;
@@ -29,6 +28,10 @@ public:
             data[index] = value;
         }
     }
+
+    int getSize() const {
+        return size;
+	}
 
     inline double getNumber(int index) const {
         if (index >= 0 && index < size) {
@@ -82,20 +85,13 @@ public:
 
 int main()
 {
-    NumberArray userarray(5);
+    NumberArray userarray(MAX_SIZE);
     
     cout << "Filling the Dynamic Array! Please enter your chosen number, then press enter" << endl;
-    cout << "When satisfied, enter the Sentinel Value of - 0.08" << endl;
     double userChoice = 0;
 
-    for (int d = 0; d < MAX_SIZE; d++) {
-        cin >> userChoice;
-        userarray.setNumber(d, userChoice);
-    }
-   
-    cout << "The Minimum Value is: " << userarray.getMin() << endl;
-    cout << "The Maximum Value is: " << userarray.getMax() << endl;
-    cout << "The Average Value is: " << userarray.getAverage() << endl;
-
-    userarray.print();
+    cout << userarray.getSize() << endl;
+    
+    return 0;
 }
+

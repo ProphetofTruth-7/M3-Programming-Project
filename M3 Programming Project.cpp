@@ -1,6 +1,7 @@
 // This is the NumberArray2 Subproject
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int const MAX_SIZE = 30;
@@ -26,6 +27,12 @@ public:
     void setNumber(int index, double value) {
 		if (index >= 0 && index < size) {
             data[index] = value;
+        }
+    }
+
+    void setSize(int x) {
+        if (round(x) > 0) {
+            size = round(x);
         }
     }
 
@@ -86,12 +93,24 @@ public:
 int main()
 {
     NumberArray userarray(MAX_SIZE);
+
+    cout << "Please enter the size of your array!" << endl;
+    int userSize = 0;
+    cin >> userSize;
+    userarray.setSize(userSize);
     
     cout << "Filling the Dynamic Array! Please enter your chosen number, then press enter" << endl;
     double userChoice = 0;
 
-    cout << userarray.getSize() << endl;
-    
+    for (int d = 0; d < userarray.getSize(); d++) {
+        cin >> userChoice;
+        userarray.setNumber(d, userChoice);
+    }
+
+    cout << "The Minimum Value is: " << userarray.getMin() << endl;
+    cout << "The Maximum Value is: " << userarray.getMax() << endl;
+    cout << "The Average Value is: " << userarray.getAverage() << endl;
+
+    userarray.print();
     return 0;
 }
-

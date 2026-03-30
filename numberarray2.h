@@ -89,7 +89,7 @@ public:
  * Postconditions:
  *   - The value at the specified index is returned directly to the function call
  */
-    double getNumber(int index) const;
+    double getNumber(int index) inline const;
 /*
  * getMin
  * ------------------------------------------------------------

@@ -31,12 +31,12 @@ int NumberArray::getSize() const {
     return size;
 }
 
-double NumberArray::getNumber(int index) const {
-    if (index >= 0 && index < size) {
+double NumberArray::getNumber(int index) inline const {
+    if (index > 0 && index < size) {
         return data[index];
     }
     else {
-        return 0.0;
+        return 0;
         cout << "Invalid Index(out of bounds)" << endl;
     }
 }
